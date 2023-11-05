@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potential Study Buddies</title>
+    <style>
+        body {
+            font-family: Didot, serif;
+            background-color: lavenderblush; /* Background color */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, #ffe1d0 0%, #d5a6bd 50%, #d5a6bd 50%, #ffe1d0 100%);
+        }
+
+        h1 {
+            text-align: center;
+            color: #502902; /* Dark lavender color */
+            margin-bottom: 20px;
+        }
+
+        .buddy {
+            background: #f9eded; /* Light dusty rose color */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 70%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .buddy h3 {
+            margin: 0;
+            color: #502902; /* Light brown color */
+            font-size: 1.2em;
+        }
+
+        .buddy p {
+            margin: 8px 0;
+            color: #783f04; /* Dark lavender color */
+        }
+
+        .no-buddies {
+            text-align: center;
+            color: #b191a3; /* Light lavender color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Potential Study Buddies</h1>
+    {% if finalProspects %}
+        {% for buddy in finalProspects %}
+            <div class="buddy">
+                <h3>Name: {{ buddy[0] }}</h3>
+                <p>Subjects: {{ buddy[1] }}</p>
+                <p>Time Available: {{ buddy[2] }} hours</p>
+                <p>Stress Level: {{ buddy[3] }}/5</p>
+                <p>Time to Deadline: {{ buddy[4] }} hours</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-buddies">No study buddies are taking this class.</p>
+    {% endif %}
+</body>
+</html>

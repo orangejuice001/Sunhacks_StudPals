@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Buddy Matcher</title>
+    <style>
+        body {
+            font-family: Didot, serif;
+            background-color: #b4a7d5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, #ffe1d0 0%, #d5a6bd 50%, #d5a6bd 50%, #ffe1d0 100%);
+        }
+
+        form {
+            background-color: #f9eded; /* Form background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #783f04; /* Header color */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #783f04; /* Label color */
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 18px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #333; /* Input text color */
+        }
+
+        input[type="submit"] {
+            background-color: #f4cccc; /* Button color */
+            color: #783f04; /* Button text color */
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ea9999; /* Hover color */
+        }
+    </style>
+</head>
+<body>
+    <form action="/result.html" method="post">
+        <h1>Welcome to the Study Buddy Matcher</h1>
+        <label for="className">Enter Class Name:</label>
+        <input type="text" id="className" name="className">
+
+        <label for="timeToStudy">Time you want to spend studying (in hours):</label>
+        <input type="number" id="timeToStudy" name="timeToStudy">
+
+        <label for="stressed">On a scale of 1-5, how stressed are you? (1 being low stress, 5 being high stress)</label>
+        <input type="number" id="stressed" name="stressed" min="1" max="5">
+
+        <label for="timeToDeadline">Time until the deadline (in hours):</label>
+        <input type="number" id="timeToDeadline" name="timeToDeadline">
+
+        <input type="submit" value="Find Study Buddies">
+    </form>
+</body>
+</html>
