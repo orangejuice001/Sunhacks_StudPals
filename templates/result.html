@@ -44,14 +44,45 @@
             color: #783f04; /* Dark lavender color */
         }
 
+        .buddy button{
+            background-color: #f4cccc; /* Button color */
+            color: #783f04; /* Button text color */
+            padding: 8px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .environment button{
+            background-color: #e692a1; /* Button color */
+            color: #783f04; /* Button text color */
+            padding: 15px 20px;
+            float: right;
+            border: #783f04;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
         .no-buddies {
             text-align: center;
             color: #b191a3; /* Light lavender color */
+            background-image: linear-gradient(to bottom, #ffe1d0 0%, #d5a6bd 50%, #d5a6bd 50%, #ffe1d0 100%);
+
         }
     </style>
 </head>
 <body>
     <h1>Potential Study Buddies</h1>
+    <div class="environment">
+        <button>Explore Study Environment</button>
+    </div>
+
     {% if finalProspects %}
         {% for buddy in finalProspects %}
             <div class="buddy">
@@ -60,6 +91,8 @@
                 <p>Time Available: {{ buddy[2] }} hours</p>
                 <p>Stress Level: {{ buddy[3] }}/5</p>
                 <p>Time to Deadline: {{ buddy[4] }} hours</p>
+
+            <button>Choose Me!</button>
             </div>
         {% endfor %}
     {% else %}

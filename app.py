@@ -43,7 +43,10 @@ def result():
                      ['Thomas', ['CSE330', 'CSE493'], 8, 3, 2], ['Mike', ['CSE340', 'CSE492'], 4, 2, 3],
                      ['Gamaya', ['CSE355', 'CSE493'], 6, 3, 2],
                      ['Lizzie', ['CSE350', 'CSE492'], 6, 3, 3], ['Tara', ['CSE355', 'CSE464'], 3.5, 3, 3],
-                     ['Kelsie', ['CSE330', 'CSE464'], 4, 3, 4]]
+                     ['Kelsie', ['CSE330', 'CSE464'], 4, 3, 4], ['Isha', ['CSE110', 'CSE120'], 3, 4, 4],
+                     ['Meriam', ['CSE205', 'CSE230'], 7, 2, 6], ['Sam', ['CSE365', 'CSE460'], 8, 5, 10],
+                     ['Ansh', ['CSE412', 'CSE472'], 1, 0, 5], ['Muna', ['CSE100', 'CSE301'], 4, 3, 6],
+                     ['Preeti', ['CSE301', 'CSE445'], 6, 5, 7]]
 
     potentialStudyBuddies = []
     # Your existing code for finding potential study buddies goes here
