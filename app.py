@@ -27,6 +27,11 @@ def result():
     if not is_valid_class_name(className):
         return render_template('error.html', error='Invalid Class Name Format'), 400
 
+    # Error handling for time conditions
+    if timeToDeadline < timeToStudy:
+        return render_template('error.html', error='Time to Deadline cannot be less than Time to Study'), 400
+
+
     existingUsers = [['Sindhu', ['CSE355', 'CSE330', 'CSE360'], 2.5, 3, 4],
                      ['Tejal', ['CSE475', 'CSE445', 'CSE492'], 3, 4, 1],
                      ['Rhea', ['CSE330', 'CSE492'], 4.5, 3, 4], ['John', ['CSE110', 'CSE120'], 6, 2, 2],
