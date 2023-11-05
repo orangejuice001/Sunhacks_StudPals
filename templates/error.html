@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Didot, serif;
+            background-color: #b4a7d5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, #ffe1d0 0%, #d5a6bd 50%, #d5a6bd 50%, #ffe1d0 100%);
+            color: #783f04; /* Text color */
+        }
+
+        .error-container {
+            background-color: #f9eded; /* Error container background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #783f04; /* Header color */
+        }
+
+        p {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Error Encountered</h1>
+        <p>An error occurred: {{ error }}</p>
+        <!-- Additional error information or guidance can be added here -->
+    </div>
+</body>
+</html>

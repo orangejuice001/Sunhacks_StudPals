@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import re
 
 # app = Flask(__name__)
 app = Flask(__name__, template_folder='templates')
@@ -10,6 +11,10 @@ app = Flask(__name__, template_folder='templates')
 def index():
     return render_template('index.html')
 
+# Check for valid class name format
+def is_valid_class_name(class_name):
+    return re.match(r'CSE\d{3}', class_name) is not None
+
 
 @app.route('/result.html', methods=['POST'])
 def result():
@@ -17,6 +22,10 @@ def result():
     timeToStudy = float(request.form['timeToStudy'])
     stressed = int(request.form['stressed'])
     timeToDeadline = float(request.form['timeToDeadline'])
+
+    # Input validation
+    if not is_valid_class_name(className):
+        return render_template('error.html', error='Invalid Class Name Format'), 400
 
     existingUsers = [['Sindhu', ['CSE355', 'CSE330', 'CSE360'], 2.5, 3, 4],
                      ['Tejal', ['CSE475', 'CSE445', 'CSE492'], 3, 4, 1],
@@ -76,6 +85,17 @@ def result():
         return render_template('result.html', finalProspects=finalProspects)
     else:
         return "No study buddies are taking this class"
+
+
+# Error handler for 404 Not Found errors
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('/error.html', error='404 - Not Found'), 404
+
+# Error handler for 500 Internal Server errors
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template('/error.html', error='500 - Internal Server Error'), 500
 
 
 if __name__ == '__main__':
